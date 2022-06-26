@@ -1,4 +1,4 @@
-|| T.K. Phoenix ||
+/| T.K. Phoenix ||
 
 *//Documentation
 Using RandomWordApi
@@ -20,17 +20,17 @@ and bringing defeat one step closer!
 
 //Mechanics:
 When a mistake is made; replace word w/ new word
-Every 2 mistakes = -1 heart;
+Every mistake = -1 heart;
 
 StoryMode -
 Easy[5 words], Med[10 words], Hard[20 words]
-Easy[2 Hearts (6 mistakes)]
-Med[1 Hearts (4 mistakes)]
-Hard[No Heart (2 mistakes)]
+Easy[2 Hearts (3 mistakes)]
+Med[1 Hearts (2 mistakes)]
+Hard[No Heart (1 mistakes)]
 Five Minutes to reach goal to pass level.
 
 VS -
-1 Heart for each player (4 Mistakes)
+1 Heart for each player (2 Mistakes)
 QP[10 words], H2H[25 words], F2F[First to fall]
 First to goal or last standing wins in 2-player mode.
 Every five words with no mistake recovers a heart

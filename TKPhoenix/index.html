@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src='main.js'></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>T.K. Phoenix</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Ty Kali</h1>
+    </header>
+      <p>Choose your game mode:</p>
+    <form action= buttonClick()>
+    <input type="radio" id="story" name="game_mode" value="Story Mode">
+    <label for="story">Story</label><br>
+    <input type="radio" id="vs" name="game_mode" value="Versus">
+    <label for="vs">VS</label><br>
+    <input type="radio" id="challenge" name="game_mode" value="Challenge Mode">
+    <label for="challenge">Challenge</label>
+    
+      <br>  
+    
+      <p>Difficulty?</p>
+      <input type="radio" id="easy" name="difficulty" value="easy">
+      <label for="easy">Easy</label><br>
+      <input type="radio" id="med" name="difficulty" value="med">
+      <label for="med">Med</label><br>  
+      <input type="radio" id="hard" name="difficulty" value="hard">
+      <label for="hard">Hard</label><br><br>
+      <input type="submit" value="Submit">
+    </form>
+    
+</body>
+</html>
