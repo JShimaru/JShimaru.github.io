@@ -15,7 +15,7 @@
 body{
     display: flex;
     height: 100vh;
-    background-image: url(./Images/homepage.jpg);
+    background-image: url(../Images/homepage.jpg);
     background-size: scale-down;
     background-repeat: no-repeat;
     background-color: bisque;
@@ -34,7 +34,7 @@ p{
 
 div.a{
     position:sticky;
-    top: 0;
+    bottom: 0;
     right: 0;
 }
 
@@ -53,7 +53,7 @@ button:hover{
     background-color: aqua;
 }
 
-.piece{
+.piece img{
     max-width: fit-content;
     max-height: min-content;
 }
