@@ -19,7 +19,6 @@ const piece = document.querySelector("#piece")
 const button = document.querySelector("#word-button")
 const timer = document.querySelector("#timer")
 const hearts = document.querySelector("#heart")
-const submittedWord = button.value;
 // const form = body.form;
 // const submitWord = document.getElementById("submitWord");
 const currentWordLocation = document.querySelector("#current-word")
@@ -219,7 +218,7 @@ function storyModeUpdate(userWord){
 //End of Story Mode Update Function
 //Player input for Story mode function
 function submitUserWord(string){
-    let word = string.toString().toLowerCase();
+    let word = string.stringify();
     storyModeUpdate(word);
     currentWordLocation.innerText = currentWord 
 
