@@ -20,7 +20,7 @@ const button = document.querySelector("#word-button")
 const timer = document.querySelector("#timer")
 const hearts = document.querySelector("#heart")
 // const form = body.form;
-// const submitWord = document.getElementById("submitWord");
+const submitWord = document.querySelector("#userWord");
 const currentWordLocation = document.querySelector("#current-word")
 //next level function
 function nextLevel(){
@@ -129,7 +129,7 @@ const storyTimer = setInterval(() => {
 // }, 60000);
 //Check Word Function to be called by all Update functions
 function checkWord(input){
-    console.log(input)
+    console.log("input %o", input)
     userSubmittedWord = input.toString();
     console.log(userSubmittedWord)
     currentWord = words[position]
@@ -213,17 +213,17 @@ function storyModeUpdate(userWord){
                 quit();
             }
     moreWords();
-    storyTimer();
+    storyTimer;
 }}
 //End of Story Mode Update Function
 //Player input for Story mode function
 function submitUserWord(string){
-    let word = string.stringify();
+    let word = string;
     storyModeUpdate(word);
     currentWordLocation.innerText = currentWord 
 
     if(submittedWords.length == 1){
-        storyTimer();
+        storyTimer;
     }
 }
 //Game Start function for onLoad
@@ -234,7 +234,9 @@ window.onload = function() {
     clearInterval(storyTimer)    
 }
 
-button.addEventListener("click", (input) => {
+button.addEventListener("click", () => {
+    userWord = submitWord.value
+    console.log(userWord)
     clearInterval(storyTimer)
-    submitUserWord(input)
+    submitUserWord(userWord)
 })
