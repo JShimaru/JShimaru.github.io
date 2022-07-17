@@ -24,7 +24,8 @@ const submitWord = document.querySelector("#userWord");
 const currentWordLocation = document.querySelector("#current-word")
 //next level function
 function nextLevel(){
-    document.body.style.backgroundImage = url('./images/storyMode/'+levelIndex[level])
+    let stage = levelIndex[level]
+    body.style.backgroundImage = url('./images/storyMode/'+stage)
     wordGenerator();
     }
 //Random Word API
@@ -38,13 +39,12 @@ async function wordGenerator(){
          .then(res => res.json())
          .then(data => words.push(...data))
                console.log("This is words: " +words)
-     currentWordLocation.innerText = `${words[0]}`;
+     currentWordLocation.innerText = `${words?.[0]}`;
  }
 //create piece function
 function createPiece(letter){
     let name = letter.toString().split("")
     let pieceLetter = name.shift()
-
     if(pieceLetter === undefined){
         alert(`Please enter a name!`)
     }else{
@@ -59,7 +59,7 @@ async function Start(){
     piecePlace = 1;
     progress = 1;
     heart = 2;
-    currentWordLocation.innerText = `${words[0]}`;
+    currentWordLocation.innerText = `${words?.[0]}`;
 }
 //Quit function
 function quit(){alert(`Thanks for Playing!`)}
@@ -113,8 +113,10 @@ function quit(){alert(`Thanks for Playing!`)}
 // }
 //end code for button clicks
 //Timers
+let startTime = 300;
 const storyTimer = setInterval(() => {
     body.style.backgroundImage= "url(`images/StoryMod/0_Start.jpg`)"
+    timer.innerText = timerTime()
     let result = confirm(`Time's Up! Try again?`)
     if(result == true){
     Start();
@@ -127,6 +129,13 @@ const storyTimer = setInterval(() => {
 //     //print correctWords.length
 //     //load global high score and personal high score
 // }, 60000);
+//timerTime function for countdown
+function timerTime(){
+    timer.innerText = 300
+    startTime = new Date()
+    return Math.floor((new Date()- startTime)/1000)
+}
+
 //Check Word Function to be called by all Update functions
 function checkWord(input){
     console.log("input %o", input)
@@ -180,6 +189,7 @@ function moreWords(){
         currentWord = words[position]
     }else if(words.length == position && backupWords.length == 0){
         wordGenerator();
+        position = 0;
         currentWord = words[position]
     }
 }
@@ -240,3 +250,5 @@ button.addEventListener("click", () => {
     clearInterval(storyTimer)
     submitUserWord(userWord)
 })
+
+console.log(level)
